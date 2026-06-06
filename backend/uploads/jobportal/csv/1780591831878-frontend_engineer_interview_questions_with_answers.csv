@@ -1,0 +1,11 @@
+Question,Answer
+What is the Virtual DOM in React?,A lightweight copy of the real DOM used by React to improve performance.
+"Difference between var, let, and const?",var is function-scoped; let and const are block-scoped. const cannot be reassigned.
+What are React Hooks?,Functions that let you use state and lifecycle features in functional components.
+Explain event bubbling and event capturing.,Bubbling moves events from child to parent; capturing moves from parent to child.
+What is the difference between == and === in JavaScript?,== compares values with type conversion; === compares value and type.
+What is state management?,Managing application data and UI state across components.
+What are closures in JavaScript?,Functions that remember variables from their outer scope even after execution.
+Explain CSS Flexbox.,A CSS layout system for aligning and distributing items in a container.
+What is responsive web design?,Designing websites that adapt to different screen sizes and devices.
+What is the purpose of useEffect?,"Runs side effects such as API calls, subscriptions, and DOM updates."

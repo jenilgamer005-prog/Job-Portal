@@ -1,0 +1,11 @@
+Question,Answer
+What is REST API?,An architectural style that uses HTTP methods to access and manipulate resources.
+Difference between SQL and NoSQL databases?,SQL databases are relational; NoSQL databases are non-relational and flexible.
+What is JWT authentication?,A token-based authentication mechanism using JSON Web Tokens.
+Explain middleware in Express.js.,Functions that execute during the request-response cycle.
+What is database indexing?,A technique that improves database query performance.
+What are HTTP status codes?,"Codes indicating the result of an HTTP request, such as 200, 404, and 500."
+Difference between PUT and PATCH?,PUT replaces a resource; PATCH partially updates a resource.
+What is caching?,Storing frequently accessed data for faster retrieval.
+What is dependency injection?,A design pattern where dependencies are provided externally to a class or function.
+What are microservices?,An architecture where applications are divided into small independent services.
