@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   Search,
@@ -151,7 +151,7 @@ const FindJobPage = () => {
         return;
       }
 
-      const res = await fetch(`https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/saved/job/${jobId}`, {
+      const res = await fetch(`https://job-portal-backend-gamma-two.vercel.app/api/saved/job/${jobId}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -221,7 +221,7 @@ const FindJobPage = () => {
         return;
       }
 
-      const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/user/profile", {
+      const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/user/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -286,7 +286,7 @@ const FindJobPage = () => {
       }
 
       const res = await fetch(
-        `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/application/apply/${confirmToast.jobId}`,
+        `https://job-portal-backend-gamma-two.vercel.app/api/application/apply/${confirmToast.jobId}`,
         {
           method: "POST",
           headers: {
@@ -332,7 +332,7 @@ const FindJobPage = () => {
         const token = rawUser ? JSON.parse(rawUser).token : null;
         if (!token) return;
 
-        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/application/user", {
+        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/application/user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -357,7 +357,7 @@ const FindJobPage = () => {
         const token = rawUser ? JSON.parse(rawUser).token : null;
         if (!token) return;
 
-        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/saved", {
+        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/saved", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -413,7 +413,7 @@ const FindJobPage = () => {
       if (filters.maxSalary) params.append("maxSalary", filters.maxSalary);
 
       const res = await fetch(
-        `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/job?${params.toString()}`,
+        `https://job-portal-backend-gamma-two.vercel.app/api/job?${params.toString()}`,
       );
       const data = await res.json();
 
@@ -427,7 +427,7 @@ const FindJobPage = () => {
               const path = job.companyLogo.startsWith("/")
                 ? job.companyLogo
                 : `/${job.companyLogo}`;
-              logoSrc = `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app/${path
+              logoSrc = `https://job-portal-backend-gamma-two.vercel.app/${path
                 .split("/")
                 .map((segment) => encodeURIComponent(segment))
                 .join("/")}`;
@@ -615,7 +615,7 @@ const FindJobPage = () => {
   const renderLogo = (job) => {
     const logoUrl = job.logo;
     const isBroken =
-      imgErrors[job.id] || !logoUrl || logoUrl === "https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app/";
+      imgErrors[job.id] || !logoUrl || logoUrl === "https://job-portal-backend-gamma-two.vercel.app/";
 
     const initials = job.company?.charAt(0) || "?";
     const colors = [
@@ -1198,3 +1198,5 @@ const FindJobPage = () => {
 
 
 export default FindJobPage;
+
+

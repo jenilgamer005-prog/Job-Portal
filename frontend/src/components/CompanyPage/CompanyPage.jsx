@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import {
   Building2,
@@ -51,7 +51,7 @@ const CompanyPage = () => {
     const fetchCompanies = async () => {
       try {
         const response = await axios.get(
-          "https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/interview/companies",
+          "https://job-portal-backend-gamma-two.vercel.app/api/interview/companies",
         );
         if (response.data.success) {
           setCompanies(response.data.companies);
@@ -75,7 +75,7 @@ const CompanyPage = () => {
 
     const fetchFeaturedCompanies = async () => {
       try {
-        const response = await axios.get("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/company");
+        const response = await axios.get("https://job-portal-backend-gamma-two.vercel.app/api/company");
         if (response.data.success) {
           setFeaturedCompanies(response.data.companies);
         }
@@ -90,7 +90,7 @@ const CompanyPage = () => {
         const token = rawUser ? JSON.parse(rawUser).token : null;
         if (!token) return;
 
-        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/saved", {
+        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/saved", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -120,7 +120,7 @@ const CompanyPage = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/interview/company/${selectedCompany}`,
+          `https://job-portal-backend-gamma-two.vercel.app/api/interview/company/${selectedCompany}`,
         );
         if (response.data.success) {
           setInterviewQuestions(response.data.questions);
@@ -151,7 +151,7 @@ const CompanyPage = () => {
       }
 
       const res = await fetch(
-        `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/saved/question/${id}?type=interview`,
+        `https://job-portal-backend-gamma-two.vercel.app/api/saved/question/${id}?type=interview`,
         {
           method: "POST",
           headers: {
@@ -437,3 +437,5 @@ const CompanyPage = () => {
 
 
 export default CompanyPage;
+
+

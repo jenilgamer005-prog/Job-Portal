@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { careerPageStyles as s } from "../../assets/dummyStyles";
 
@@ -9,7 +9,7 @@ const Career = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const res = await axios.get("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/company");
+        const res = await axios.get("https://job-portal-backend-gamma-two.vercel.app/api/company");
         setCompanies(res.data.companies);
       } catch (error) {
         console.error("Error fetching companies:", error);
@@ -131,3 +131,5 @@ const Career = () => {
 
 
 export default Career;
+
+

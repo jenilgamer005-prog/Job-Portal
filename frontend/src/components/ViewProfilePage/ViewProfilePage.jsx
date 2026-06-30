@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   User,
   Mail,
@@ -54,7 +54,7 @@ const ViewProfilePage = () => {
       try {
         const user = JSON.parse(localStorage.getItem("jobportal_user"));
 
-        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/user/profile", {
+        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/user/profile", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -129,7 +129,7 @@ const ViewProfilePage = () => {
       if (profile.resume instanceof File) {
         formData.append("resume", profile.resume);
       }
-      const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/user/profile", {
+      const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/user/profile", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -177,7 +177,7 @@ const ViewProfilePage = () => {
       const url = URL.createObjectURL(profile.resume);
       window.open(url, "_blank");
     } else if (typeof profile.resume === "string") {
-      const fullUrl = `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/user/resume/${originalProfile._id}`;
+      const fullUrl = `https://job-portal-backend-gamma-two.vercel.app/api/user/resume/${originalProfile._id}`;
 
       const link = document.createElement("a");
       link.href = fullUrl;
@@ -397,3 +397,5 @@ const ViewProfilePage = () => {
 
 
 export default ViewProfilePage;
+
+

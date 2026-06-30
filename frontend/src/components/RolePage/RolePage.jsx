@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import {
   Briefcase,
@@ -71,7 +71,7 @@ const RolePage = () => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
-        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/interview/roles");
+        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/interview/roles");
         const data = await res.json();
         if (data.success && data.roles) {
           setRoles(data.roles);
@@ -108,7 +108,7 @@ const RolePage = () => {
       setLoadingQuestions(true);
       try {
         const res = await fetch(
-          `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/interview/role/${selectedRoleId}`,
+          `https://job-portal-backend-gamma-two.vercel.app/api/interview/role/${selectedRoleId}`,
         );
         const data = await res.json();
         if (data.success) {
@@ -130,7 +130,7 @@ const RolePage = () => {
         const token = rawUser ? JSON.parse(rawUser).token : null;
         if (!token) return;
 
-        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/saved", {
+        const res = await fetch("https://job-portal-backend-gamma-two.vercel.app/api/saved", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -177,7 +177,7 @@ const RolePage = () => {
       }
 
       const res = await fetch(
-        `https://job-portal-backend-gamma-two.vercel.app/https://job-portal-backend-gamma-two.vercel.app//api/saved/question/${id}?type=role`,
+        `https://job-portal-backend-gamma-two.vercel.app/api/saved/question/${id}?type=role`,
         {
           method: "POST",
           headers: {
@@ -383,3 +383,5 @@ const RolePage = () => {
 
 
 export default RolePage;
+
+
